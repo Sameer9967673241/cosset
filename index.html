@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosset — Premium Corporate Travel Management</title>
+  <meta name="description" content="Cosset offers premium end-to-end corporate travel management — flights, hotels, ground transport, and visa services tailored for enterprise clients worldwide." />
+  <meta name="keywords" content="corporate travel, business travel, flight booking, hotel booking, travel management, visa services" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cosset — Premium Corporate Travel Management" />
+  <meta property="og:description" content="Seamless, luxury corporate travel solutions for enterprise clients worldwide." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo" id="logo-link">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Cosset</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#why-us" class="nav-link">Why Cosset</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#clients" class="nav-link">Clients</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-nav" id="nav-cta">Book a Demo</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="assets/hero-bg.png" alt="Corporate jet flying over city at golden hour" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge fade-up" data-delay="0">
+        <span class="badge-dot"></span>
+        Trusted by 500+ Global Enterprises
+      </div>
+      <h1 class="hero-title fade-up" data-delay="100">
+        Corporate Travel,<br />
+        <em>Elevated.</em>
+      </h1>
+      <p class="hero-subtitle fade-up" data-delay="200">
+        Cosset delivers seamless end-to-end travel management for corporate clients — from business-class flights and curated hotels to visa services and 24/7 concierge support.
+      </p>
+      <div class="hero-actions fade-up" data-delay="300">
+        <a href="#contact" class="btn-primary" id="hero-cta-primary">Start Your Journey</a>
+        <a href="#services" class="btn-ghost" id="hero-cta-ghost">Explore Services</a>
+      </div>
+      <div class="hero-stats fade-up" data-delay="400">
+        <div class="stat">
+          <span class="stat-value" data-target="500">0</span><span>+</span>
+          <span class="stat-label">Enterprise Clients</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value" data-target="98">0</span><span>%</span>
+          <span class="stat-label">On-Time Success Rate</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value" data-target="120">0</span><span>+</span>
+          <span class="stat-label">Countries Covered</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking quick-search bar -->
+    <div class="hero-search fade-up" data-delay="500">
+      <div class="search-tab active" id="tab-flight">✈ Flights</div>
+      <div class="search-tab" id="tab-hotel">🏨 Hotels</div>
+      <div class="search-tab" id="tab-car">🚗 Ground</div>
+      <div class="search-divider"></div>
+      <input type="text" placeholder="From — City or Airport" class="search-input" id="search-from" />
+      <div class="search-sep">→</div>
+      <input type="text" placeholder="To — City or Airport" class="search-input" id="search-to" />
+      <input type="date" class="search-input search-date" id="search-date" />
+      <button class="search-btn" id="search-btn">Search</button>
+    </div>
+
+    <a href="#services" class="scroll-indicator" id="scroll-down" aria-label="Scroll to services">
+      <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+    </a>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">What We Offer</span>
+        <h2 class="section-title">End-to-End Corporate<br /><em>Travel Solutions</em></h2>
+        <p class="section-desc">Every touchpoint of your corporate journey — handled with precision and care.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card fade-up" data-delay="0" id="service-flights">
+          <div class="service-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M56 20L36 28L32 12L24 16L28 32L8 40L10 46L30 42L36 56L44 52L40 36L60 28L56 20Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Flight Bookings</h3>
+          <p class="service-desc">Access economy, business, and first-class bookings with preferred corporate rates across 200+ airlines globally.</p>
+          <ul class="service-features">
+            <li>Multi-city & open-jaw itineraries</li>
+            <li>Negotiated corporate fares</li>
+            <li>Instant e-ticket delivery</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn more →</a>
+        </div>
+
+        <div class="service-card fade-up" data-delay="100" id="service-hotels">
+          <div class="service-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="20" width="48" height="36" rx="2" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M8 28H56M24 28V56M40 28V56M16 8H48L56 20H8L16 8Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <rect x="28" y="40" width="8" height="16" rx="1" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Hotel Reservations</h3>
+          <p class="service-desc">Curated 4 and 5-star properties near corporate hubs with seamless check-in and flexible cancellation policies.</p>
+          <ul class="service-features">
+            <li>500,000+ global properties</li>
+            <li>Guaranteed best rates</li>
+            <li>Corporate loyalty integration</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn more →</a>
+        </div>
+
+        <div class="service-card fade-up" data-delay="200" id="service-ground">
+          <div class="service-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="28" width="56" height="20" rx="4" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M12 28V20C12 16 16 12 24 12H40C48 12 52 16 52 20V28" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <circle cx="16" cy="48" r="6" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="48" cy="48" r="6" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M22 48H42" stroke="currentColor" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Ground Transport</h3>
+          <p class="service-desc">Chauffeured airport transfers, executive car rentals, and on-demand ground logistics for your team.</p>
+          <ul class="service-features">
+            <li>Meet & greet at terminals</li>
+            <li>Luxury fleet options</li>
+            <li>Real-time GPS tracking</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn more →</a>
+        </div>
+
+        <div class="service-card fade-up" data-delay="300" id="service-visa">
+          <div class="service-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="10" width="48" height="44" rx="4" stroke="currentColor" stroke-width="2.5"/>
+              <rect x="14" y="18" width="22" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+              <path d="M14 42H50M14 48H36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="39" cy="26" r="7" stroke="currentColor" stroke-width="2"/>
+              <path d="M36 26L38 28L43 23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Visa & Documentation</h3>
+          <p class="service-desc">End-to-end visa processing and travel documentation support for business travelers visiting 120+ countries.</p>
+          <ul class="service-features">
+            <li>Fast-track processing</li>
+            <li>Document verification</li>
+            <li>Embassy appointment booking</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn more →</a>
+        </div>
+
+        <div class="service-card fade-up" data-delay="400" id="service-expense">
+          <div class="service-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="48" height="48" rx="4" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M20 32H44M20 22H44M20 42H32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="44" cy="44" r="8" fill="var(--bg-primary)" stroke="currentColor" stroke-width="2"/>
+              <path d="M41 44L43 46L47 42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Expense Management</h3>
+          <p class="service-desc">Automated expense reporting, policy compliance, and real-time travel spend dashboards for finance teams.</p>
+          <ul class="service-features">
+            <li>ERP & SAP integration</li>
+            <li>Automated invoice generation</li>
+            <li>Monthly analytics reports</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn more →</a>
+        </div>
+
+        <div class="service-card service-card--cta fade-up" data-delay="500" id="service-concierge">
+          <div class="service-icon service-icon--gold">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="20" r="10" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M8 56C8 44 18 36 32 36C46 36 56 44 56 56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M44 14L48 10M20 14L16 10M32 10V6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-title">24/7 Concierge</h3>
+          <p class="service-desc">Dedicated relationship managers and round-the-clock support to handle every travel emergency, change, or upgrade request.</p>
+          <ul class="service-features">
+            <li>Dedicated account manager</li>
+            <li>24/7 emergency hotline</li>
+            <li>Proactive flight alerts</li>
+          </ul>
+          <a href="#contact" class="service-link service-link--gold">Learn more →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY US ===================== -->
+  <section class="why-us" id="why-us">
+    <div class="why-bg-decoration"></div>
+    <div class="container why-container">
+      <div class="why-visual fade-up">
+        <div class="why-card-stack">
+          <div class="trip-card trip-card--1">
+            <div class="trip-airline">✈ Emirates EK 512</div>
+            <div class="trip-route">DXB → LHR</div>
+            <div class="trip-class">Business Class</div>
+            <div class="trip-time">07:45 — 12:30</div>
+            <div class="trip-status status--confirmed">Confirmed</div>
+          </div>
+          <div class="trip-card trip-card--2">
+            <div class="trip-airline">🏨 The Ritz Carlton</div>
+            <div class="trip-route">London, UK</div>
+            <div class="trip-class">Deluxe King Suite</div>
+            <div class="trip-time">Check-in: Mar 12</div>
+            <div class="trip-status status--confirmed">Confirmed</div>
+          </div>
+          <div class="trip-card trip-card--3">
+            <div class="trip-airline">🚗 Chauffeur Transfer</div>
+            <div class="trip-route">Heathrow → Hotel</div>
+            <div class="trip-class">Mercedes S-Class</div>
+            <div class="trip-time">On arrival</div>
+            <div class="trip-status status--ready">Ready</div>
+          </div>
+          <div class="saving-badge">
+            <span class="saving-icon">💰</span>
+            <div>
+              <div class="saving-val">28% Saved</div>
+              <div class="saving-sub">vs. public rates</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-content fade-up" data-delay="100">
+        <span class="section-tag">Why Cosset</span>
+        <h2 class="section-title">Built for the Way<br /><em>Business Moves</em></h2>
+        <p class="why-lead">We're not a booking tool — we're your strategic travel partner, engineered to make every corporate journey smoother, smarter, and more cost-effective.</p>
+        <div class="why-points">
+          <div class="why-point" id="why-point-1">
+            <div class="why-point-icon">🌐</div>
+            <div>
+              <h4>Global Network</h4>
+              <p>Direct contracts with 200+ airlines, 500K+ hotels, and ground operators in 120 countries.</p>
+            </div>
+          </div>
+          <div class="why-point" id="why-point-2">
+            <div class="why-point-icon">📊</div>
+            <div>
+              <h4>Policy Compliance Engine</h4>
+              <p>Automated travel policy enforcement ensures bookings stay within budget without manual oversight.</p>
+            </div>
+          </div>
+          <div class="why-point" id="why-point-3">
+            <div class="why-point-icon">🔒</div>
+            <div>
+              <h4>Duty of Care</h4>
+              <p>Real-time traveler tracking, risk alerts, and emergency support to keep your team safe globally.</p>
+            </div>
+          </div>
+          <div class="why-point" id="why-point-4">
+            <div class="why-point-icon">⚡</div>
+            <div>
+              <h4>30-Second Booking</h4>
+              <p>Our smart platform learns preferences and pre-fills itineraries — from request to confirmation in seconds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">The Process</span>
+        <h2 class="section-title">Travel Management,<br /><em>Simplified</em></h2>
+      </div>
+      <div class="steps-container">
+        <div class="step-line"></div>
+        <div class="step fade-up" data-delay="0" id="step-1">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Onboard Your Company</h3>
+            <p>Share your travel policy, preferred vendors, and team structure. We configure your dedicated portal in 48 hours.</p>
+          </div>
+        </div>
+        <div class="step fade-up" data-delay="150" id="step-2">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Employees Submit Requests</h3>
+            <p>Travelers request trips via our app, portal, or directly through their account manager — any time, any device.</p>
+          </div>
+        </div>
+        <div class="step fade-up" data-delay="300" id="step-3">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Cosset Handles Everything</h3>
+            <p>From booking to boarding passes, hotel check-ins to airport transfers — your team just shows up, we handle the rest.</p>
+          </div>
+        </div>
+        <div class="step fade-up" data-delay="450" id="step-4">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Reports & Insights</h3>
+            <p>Monthly travel spend analytics, cost savings reports, and compliance dashboards delivered to your finance team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CLIENTS / TESTIMONIALS ===================== -->
+  <section class="clients" id="clients">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Trusted by Leaders</span>
+        <h2 class="section-title">What Our Corporate<br /><em>Clients Say</em></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-up" data-delay="0" id="testimonial-1">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Cosset transformed our travel operations. We reduced travel spend by 34% in the first quarter alone, and our employees love the seamless booking experience."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">SR</div>
+            <div>
+              <div class="author-name">Sarah Reynolds</div>
+              <div class="author-role">VP Operations, NexusCorp</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up" data-delay="100" id="testimonial-2">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The 24/7 support is unmatched. When our team got stranded in Frankfurt due to a strike, Cosset had us rerouted and in a hotel within 2 hours. Incredible service."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);">MA</div>
+            <div>
+              <div class="author-name">Marcus Adeyemi</div>
+              <div class="author-role">CFO, Meridian Partners</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up" data-delay="200" id="testimonial-3">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Policy compliance used to be a nightmare to enforce manually. With Cosset's automation, 100% of bookings are within policy — and the savings are automatic."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">LC</div>
+            <div>
+              <div class="author-name">Lena Chen</div>
+              <div class="author-role">Head of Finance, Altena Global</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Client logos ticker -->
+      <div class="clients-logo-row fade-up">
+        <p class="logo-row-label">Trusted by global enterprises</p>
+        <div class="logo-ticker-wrap">
+          <div class="logo-ticker" id="logo-ticker">
+            <div class="logo-item">NEXUSCORP</div>
+            <div class="logo-item">MERIDIAN</div>
+            <div class="logo-item">ALTENA</div>
+            <div class="logo-item">VERTECS</div>
+            <div class="logo-item">PRIUM</div>
+            <div class="logo-item">ORBEX</div>
+            <div class="logo-item">STRATALINK</div>
+            <div class="logo-item">FINSOVA</div>
+            <!-- duplicate for seamless loop -->
+            <div class="logo-item">NEXUSCORP</div>
+            <div class="logo-item">MERIDIAN</div>
+            <div class="logo-item">ALTENA</div>
+            <div class="logo-item">VERTECS</div>
+            <div class="logo-item">PRIUM</div>
+            <div class="logo-item">ORBEX</div>
+            <div class="logo-item">STRATALINK</div>
+            <div class="logo-item">FINSOVA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT / CTA ===================== -->
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info fade-up">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Ready to Elevate<br /><em>Your Corporate Travel?</em></h2>
+        <p class="contact-lead">Book a free consultation with our corporate travel specialists. We'll tailor a solution around your company's needs, policy, and budget.</p>
+        <div class="contact-details">
+          <div class="contact-detail" id="contact-email">
+            <span class="contact-icon">✉</span>
+            <div>
+              <div class="detail-label">Email Us</div>
+              <a href="mailto:corporate@cosset.travel" class="detail-value">corporate@cosset.travel</a>
+            </div>
+          </div>
+          <div class="contact-detail" id="contact-phone">
+            <span class="contact-icon">📞</span>
+            <div>
+              <div class="detail-label">Call Us</div>
+              <a href="tel:+97145001234" class="detail-value">+971 4 500 1234</a>
+            </div>
+          </div>
+          <div class="contact-detail" id="contact-location">
+            <span class="contact-icon">📍</span>
+            <div>
+              <div class="detail-label">Headquarters</div>
+              <span class="detail-value">DIFC, Dubai, UAE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap fade-up" data-delay="150">
+        <form class="contact-form" id="contact-form" novalidate>
+          <h3 class="form-title">Request a Demo</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="field-name">Full Name</label>
+              <input type="text" id="field-name" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="field-company">Company</label>
+              <input type="text" id="field-company" placeholder="Acme Corp" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="field-email">Work Email</label>
+            <input type="email" id="field-email" placeholder="john@company.com" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="field-travelers">No. of Travelers / Year</label>
+              <select id="field-travelers">
+                <option value="">Select range</option>
+                <option value="1-50">1 – 50</option>
+                <option value="50-200">50 – 200</option>
+                <option value="200-500">200 – 500</option>
+                <option value="500+">500+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="field-service">Primary Need</label>
+              <select id="field-service">
+                <option value="">Select service</option>
+                <option value="flights">Flights</option>
+                <option value="hotels">Hotels</option>
+                <option value="full">Full Management</option>
+                <option value="visa">Visa Services</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="field-message">Tell us about your needs</label>
+            <textarea id="field-message" rows="4" placeholder="Briefly describe your current travel volume and challenges..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full" id="form-submit">
+            <span class="btn-text">Send Request</span>
+            <span class="btn-icon">→</span>
+          </button>
+          <p class="form-note">We respond within 2 business hours. No commitment required.</p>
+        </form>
+        <div class="form-success" id="form-success">
+          <div class="success-icon">✓</div>
+          <h3>Request Received!</h3>
+          <p>Our team will reach out to you within 2 business hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span class="logo-icon">✦</span>
+          <span class="logo-text">Cosset</span>
+        </a>
+        <p class="footer-tagline">Premium corporate travel management for enterprise clients worldwide.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" id="social-linkedin" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" id="social-twitter" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" id="social-instagram" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Flight Bookings</a></li>
+          <li><a href="#services">Hotel Reservations</a></li>
+          <li><a href="#services">Ground Transport</a></li>
+          <li><a href="#services">Visa Services</a></li>
+          <li><a href="#services">Expense Management</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why-us">About Cosset</a></li>
+          <li><a href="#clients">Clients</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#contact">Careers</a></li>
+          <li><a href="#contact">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#contact">Book a Demo</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2026 Cosset Travel Technology LLC. All rights reserved.</span>
+        <span>IATA Accredited · DIFC Licensed</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
