@@ -275,4 +275,71 @@ document.addEventListener('DOMContentLoaded', () => {
     dateInput.min = new Date().toISOString().split('T')[0];
   }
 
+  /* =====================================================
+     12. LIVE DASHBOARD COUNT-UP
+  ===================================================== */
+  const ldCounters = document.querySelectorAll('.ld-count-up');
+  const ldObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target);
+        const duration = 2500;
+        const start = performance.now();
+
+        const animateLd = (now) => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(eased * target);
+          el.textContent = current.toLocaleString('en-US');
+          if (progress < 1) requestAnimationFrame(animateLd);
+          else el.textContent = target.toLocaleString('en-US');
+        };
+
+        requestAnimationFrame(animateLd);
+        ldObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  ldCounters.forEach(el => ldObserver.observe(el));
+
+  /* =====================================================
+     13. AI MODAL
+  ===================================================== */
+  const aiModalOverlay = document.getElementById('ai-modal');
+  const aiModalClose = document.getElementById('ai-modal-close');
+  const aiModalOpenBtn = document.getElementById('btn-open-ai-modal');
+  const aiModalCtaBtn = document.getElementById('ai-modal-cta-btn');
+
+  if (aiModalOverlay && aiModalOpenBtn) {
+    aiModalOpenBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      aiModalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    if (aiModalClose) {
+      aiModalClose.addEventListener('click', () => {
+        aiModalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+
+    aiModalOverlay.addEventListener('click', (e) => {
+      if (e.target === aiModalOverlay) {
+        aiModalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    if (aiModalCtaBtn) {
+      aiModalCtaBtn.addEventListener('click', () => {
+        aiModalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+  }
+
 });
