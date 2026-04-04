@@ -864,6 +864,454 @@ ul {
 }
 
 /* ============================================================
+   MARINE & CARGO SECTION
+   ============================================================ */
+.marine-section {
+  position: relative;
+  padding: 0;
+  background: linear-gradient(180deg,
+      var(--bg-secondary) 0%,
+      #0a1628 30%,
+      #071422 60%,
+      var(--bg-primary) 100%);
+  overflow: hidden;
+}
+
+.marine-section::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(ellipse, rgba(30, 80, 160, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.marine-section::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: -10%;
+  width: 40%;
+  height: 50%;
+  background: radial-gradient(ellipse, rgba(201, 168, 76, 0.06), transparent 70%);
+  pointer-events: none;
+}
+
+.marine-section .container {
+  position: relative;
+  z-index: 2;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Wave Decorations */
+.marine-wave-top,
+.marine-wave-bottom {
+  position: relative;
+  z-index: 1;
+  line-height: 0;
+}
+
+.marine-wave-top svg,
+.marine-wave-bottom svg {
+  width: 100%;
+  height: 80px;
+  display: block;
+}
+
+/* Marine Tag */
+.section-tag--marine {
+  background: rgba(30, 80, 160, 0.15);
+  border-color: rgba(60, 130, 220, 0.3);
+  color: #6eaaff;
+}
+
+/* Marine Grid */
+.marine-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.marine-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Marine Cards */
+.marine-card {
+  background: rgba(17, 24, 41, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--ease);
+}
+
+.marine-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #4a90d9, transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.marine-card:hover {
+  border-color: rgba(74, 144, 217, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(30, 80, 160, 0.06);
+}
+
+.marine-card:hover::before {
+  opacity: 1;
+}
+
+/* Main Marine Card (left column) */
+.marine-card--main {
+  background: linear-gradient(135deg, rgba(17, 24, 50, 0.8), rgba(10, 20, 40, 0.9));
+  border-color: rgba(74, 144, 217, 0.15);
+  padding: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.marine-card-glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 144, 217, 0.1), transparent);
+  pointer-events: none;
+}
+
+.marine-card--cargo {
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.08), rgba(201, 168, 76, 0.02));
+  border-color: var(--border-gold);
+}
+
+.marine-card--cargo:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(201, 168, 76, 0.06);
+}
+
+.marine-card--cargo::before {
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* Marine Card Highlight (Onshore / Offshore) */
+.marine-card--highlight {
+  background: linear-gradient(135deg, rgba(74, 144, 217, 0.12), rgba(56, 189, 248, 0.04));
+  border-color: rgba(74, 144, 217, 0.4);
+  box-shadow:
+    0 0 30px rgba(74, 144, 217, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  position: relative;
+}
+
+.marine-card--highlight::before {
+  background: linear-gradient(90deg, transparent, rgba(74, 144, 217, 0.7), transparent);
+}
+
+.marine-card--highlight::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(74, 144, 217, 0.6), rgba(56, 189, 248, 0.4), transparent);
+  border-radius: 2px;
+}
+
+.marine-card--highlight:hover {
+  border-color: rgba(74, 144, 217, 0.6);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 50px rgba(74, 144, 217, 0.12);
+  transform: translateY(-4px);
+}
+
+.marine-card-icon--highlight {
+  background: rgba(74, 144, 217, 0.18) !important;
+  border-color: rgba(74, 144, 217, 0.35) !important;
+  color: #7cb8ff !important;
+  box-shadow: 0 0 20px rgba(74, 144, 217, 0.1);
+}
+
+.marine-card--highlight .marine-card-title {
+  background: linear-gradient(135deg, #fff, #7cb8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.marine-card--highlight .marine-tag {
+  border-color: rgba(74, 144, 217, 0.35);
+  color: #7cb8ff;
+}
+
+/* Marine Card Icon */
+.marine-card-icon {
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  min-height: 64px;
+  border-radius: 16px;
+  background: rgba(74, 144, 217, 0.1);
+  border: 1px solid rgba(74, 144, 217, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: #6eaaff;
+  transition: all 0.3s;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.marine-card-icon svg {
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.marine-card-icon--sm {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  margin-bottom: 16px;
+}
+
+.marine-card-icon--sm svg {
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.marine-card:hover .marine-card-icon {
+  background: rgba(74, 144, 217, 0.18);
+  border-color: rgba(74, 144, 217, 0.35);
+}
+
+.marine-card--cargo .marine-card-icon {
+  background: var(--gold-glow);
+  border-color: var(--border-gold);
+  color: var(--gold);
+}
+
+/* Marine Card Content */
+.marine-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.marine-card-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Marine Card Feature List (main card) */
+.marine-card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.marine-card-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.mcf-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.marine-card-features li div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.marine-card-features li strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.marine-card-features li span {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Marine Card Tags */
+.marine-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.marine-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  border-radius: 50px;
+  background: rgba(74, 144, 217, 0.1);
+  border: 1px solid rgba(74, 144, 217, 0.2);
+  color: #8ec0ff;
+  transition: all 0.3s;
+}
+
+.marine-card:hover .marine-tag {
+  background: rgba(74, 144, 217, 0.15);
+  border-color: rgba(74, 144, 217, 0.3);
+}
+
+.marine-card--cargo .marine-tag {
+  background: var(--gold-glow);
+  border-color: var(--border-gold);
+  color: var(--gold-light);
+}
+
+.marine-card--cargo:hover .marine-tag {
+  background: rgba(201, 168, 76, 0.2);
+}
+
+/* Marine Stats */
+.marine-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 40px 0;
+  margin-bottom: 20px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.marine-stat {
+  text-align: center;
+}
+
+.marine-stat-val {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 600;
+  color: #6eaaff;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.marine-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.marine-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+}
+
+/* Marine CTA */
+.marine-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 24px;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .marine-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .marine-card--main {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .marine-section .container {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .marine-stats {
+    gap: 24px;
+  }
+
+  .marine-stat-val {
+    font-size: 28px;
+  }
+
+  .marine-wave-top svg,
+  .marine-wave-bottom svg {
+    height: 40px;
+  }
+
+  .marine-cta {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .marine-card {
+    padding: 24px;
+  }
+
+  .marine-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .marine-stat-divider {
+    width: 40px;
+    height: 1px;
+  }
+}
+
+/* ============================================================
    COMMAND CENTER SECTION
    ============================================================ */
 .command-center {
