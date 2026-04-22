@@ -32,8 +32,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="logo" id="logo-link">
-        <span class="logo-icon">✦</span>
-        <span class="logo-text">Cosset</span>
+        <img src="assets/logo.jpg" alt="Cosset Logo" class="logo-img" />
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#services" class="nav-link">Services</a></li>
@@ -124,148 +123,204 @@
       </div>
       <div class="services-grid">
 
-        <div class="service-card fade-up" data-delay="0" id="service-flights">
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M56 20L36 28L32 12L24 16L28 32L8 40L10 46L30 42L36 56L44 52L40 36L60 28L56 20Z"
-                stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" />
-            </svg>
+        <!-- Flight Bookings -->
+        <div class="service-flip-card fade-up" data-delay="0" id="service-flights" onclick="void(0)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="service-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M56 20L36 28L32 12L24 16L28 32L8 40L10 46L30 42L36 56L44 52L40 36L60 28L56 20Z"
+                    stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="service-title">Flight Bookings</h3>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="service-title">Flight Bookings</h3>
+              <p class="service-desc">Access economy, business, and first-class bookings with preferred corporate rates
+                across 200+ airlines globally.</p>
+              <ul class="service-features">
+                <li>Multi-city & open-jaw itineraries</li>
+                <li>Negotiated corporate fares</li>
+                <li>Instant e-ticket delivery</li>
+              </ul>
+              <a href="#contact" class="service-link">Learn more →</a>
+            </div>
           </div>
-          <h3 class="service-title">Flight Bookings</h3>
-          <p class="service-desc">Access economy, business, and first-class bookings with preferred corporate rates
-            across 200+ airlines globally.</p>
-          <ul class="service-features">
-            <li>Multi-city & open-jaw itineraries</li>
-            <li>Negotiated corporate fares</li>
-            <li>Instant e-ticket delivery</li>
-          </ul>
-          <a href="#contact" class="service-link">Learn more →</a>
         </div>
 
-        <div class="service-card fade-up" data-delay="100" id="service-hotels">
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="20" width="48" height="36" rx="2" stroke="currentColor" stroke-width="2.5" />
-              <path d="M8 28H56M24 28V56M40 28V56M16 8H48L56 20H8L16 8Z" stroke="currentColor" stroke-width="2.5"
-                stroke-linejoin="round" />
-              <rect x="28" y="40" width="8" height="16" rx="1" stroke="currentColor" stroke-width="2" />
-            </svg>
+        <!-- Hotel Reservations -->
+        <div class="service-flip-card fade-up" data-delay="100" id="service-hotels" onclick="void(0)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="service-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8" y="20" width="48" height="36" rx="2" stroke="currentColor" stroke-width="2.5" />
+                  <path d="M8 28H56M24 28V56M40 28V56M16 8H48L56 20H8L16 8Z" stroke="currentColor" stroke-width="2.5"
+                    stroke-linejoin="round" />
+                  <rect x="28" y="40" width="8" height="16" rx="1" stroke="currentColor" stroke-width="2" />
+                </svg>
+              </div>
+              <h3 class="service-title">Hotel Reservations</h3>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="service-title">Hotel Reservations</h3>
+              <p class="service-desc">Curated 4 and 5-star properties near corporate hubs with seamless check-in and
+                flexible cancellation policies.</p>
+              <ul class="service-features">
+                <li>500,000+ global properties</li>
+                <li>Guaranteed best rates</li>
+                <li>Corporate loyalty integration</li>
+              </ul>
+              <a href="#contact" class="service-link">Learn more →</a>
+            </div>
           </div>
-          <h3 class="service-title">Hotel Reservations</h3>
-          <p class="service-desc">Curated 4 and 5-star properties near corporate hubs with seamless check-in and
-            flexible cancellation policies.</p>
-          <ul class="service-features">
-            <li>500,000+ global properties</li>
-            <li>Guaranteed best rates</li>
-            <li>Corporate loyalty integration</li>
-          </ul>
-          <a href="#contact" class="service-link">Learn more →</a>
         </div>
 
-        <div class="service-card fade-up" data-delay="200" id="service-ground">
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="28" width="56" height="20" rx="4" stroke="currentColor" stroke-width="2.5" />
-              <path d="M12 28V20C12 16 16 12 24 12H40C48 12 52 16 52 20V28" stroke="currentColor" stroke-width="2.5"
-                stroke-linejoin="round" />
-              <circle cx="16" cy="48" r="6" stroke="currentColor" stroke-width="2.5" />
-              <circle cx="48" cy="48" r="6" stroke="currentColor" stroke-width="2.5" />
-              <path d="M22 48H42" stroke="currentColor" stroke-width="2.5" />
-            </svg>
+        <!-- Ground Transport -->
+        <div class="service-flip-card fade-up" data-delay="200" id="service-ground" onclick="void(0)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="service-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="4" y="28" width="56" height="20" rx="4" stroke="currentColor" stroke-width="2.5" />
+                  <path d="M12 28V20C12 16 16 12 24 12H40C48 12 52 16 52 20V28" stroke="currentColor" stroke-width="2.5"
+                    stroke-linejoin="round" />
+                  <circle cx="16" cy="48" r="6" stroke="currentColor" stroke-width="2.5" />
+                  <circle cx="48" cy="48" r="6" stroke="currentColor" stroke-width="2.5" />
+                  <path d="M22 48H42" stroke="currentColor" stroke-width="2.5" />
+                </svg>
+              </div>
+              <h3 class="service-title">Ground Transport</h3>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="service-title">Ground Transport</h3>
+              <p class="service-desc">Chauffeured airport transfers, executive car rentals, and on-demand ground logistics
+                for your team.</p>
+              <ul class="service-features">
+                <li>Meet & greet at terminals</li>
+                <li>Luxury fleet options</li>
+                <li>Real-time GPS tracking</li>
+              </ul>
+              <a href="services/transportation.html" class="service-link">Explore Transportation →</a>
+            </div>
           </div>
-          <h3 class="service-title">Ground Transport</h3>
-          <p class="service-desc">Chauffeured airport transfers, executive car rentals, and on-demand ground logistics
-            for your team.</p>
-          <ul class="service-features">
-            <li>Meet & greet at terminals</li>
-            <li>Luxury fleet options</li>
-            <li>Real-time GPS tracking</li>
-          </ul>
-          <a href="services/transportation.html" class="service-link">Explore Transportation →</a>
         </div>
 
-        <div class="service-card fade-up" data-delay="300" id="service-visa">
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="10" width="48" height="44" rx="4" stroke="currentColor" stroke-width="2.5" />
-              <rect x="14" y="18" width="22" height="16" rx="2" stroke="currentColor" stroke-width="2" />
-              <path d="M14 42H50M14 48H36" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              <circle cx="39" cy="26" r="7" stroke="currentColor" stroke-width="2" />
-              <path d="M36 26L38 28L43 23" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
+        <!-- Visa & Documentation -->
+        <div class="service-flip-card fade-up" data-delay="300" id="service-visa" onclick="void(0)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="service-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8" y="10" width="48" height="44" rx="4" stroke="currentColor" stroke-width="2.5" />
+                  <rect x="14" y="18" width="22" height="16" rx="2" stroke="currentColor" stroke-width="2" />
+                  <path d="M14 42H50M14 48H36" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <circle cx="39" cy="26" r="7" stroke="currentColor" stroke-width="2" />
+                  <path d="M36 26L38 28L43 23" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="service-title">Visa & Documentation</h3>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="service-title">Visa & Documentation</h3>
+              <p class="service-desc">End-to-end visa processing and travel documentation support for business travelers
+                visiting 120+ countries.</p>
+              <ul class="service-features">
+                <li>Fast-track processing</li>
+                <li>Document verification</li>
+                <li>Embassy appointment booking</li>
+              </ul>
+              <a href="services/visa.html" class="service-link">Explore Visa Services →</a>
+            </div>
           </div>
-          <h3 class="service-title">Visa & Documentation</h3>
-          <p class="service-desc">End-to-end visa processing and travel documentation support for business travelers
-            visiting 120+ countries.</p>
-          <ul class="service-features">
-            <li>Fast-track processing</li>
-            <li>Document verification</li>
-            <li>Embassy appointment booking</li>
-          </ul>
-          <a href="services/visa.html" class="service-link">Explore Visa Services →</a>
         </div>
 
-        <div class="service-card fade-up" data-delay="350" id="service-insurance">
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M32 6L8 18V30C8 46 18 54 32 60C46 54 56 46 56 30V18L32 6Z" stroke="currentColor"
-                stroke-width="2.5" stroke-linejoin="round" />
-              <path d="M24 32L30 38L40 26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
+        <!-- Travel Insurance -->
+        <div class="service-flip-card fade-up" data-delay="350" id="service-insurance" onclick="void(0)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="service-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M32 6L8 18V30C8 46 18 54 32 60C46 54 56 46 56 30V18L32 6Z" stroke="currentColor"
+                    stroke-width="2.5" stroke-linejoin="round" />
+                  <path d="M24 32L30 38L40 26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="service-title">Travel Insurance</h3>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="service-title">Travel Insurance</h3>
+              <p class="service-desc">Comprehensive travel insurance covering medical emergencies, trip cancellations,
+                baggage, and liability for business travelers.</p>
+              <ul class="service-features">
+                <li>Up to $10M medical coverage</li>
+                <li>Trip cancellation protection</li>
+                <li>24/7 emergency assistance</li>
+              </ul>
+              <a href="services/insurance.html" class="service-link">Explore Insurance →</a>
+            </div>
           </div>
-          <h3 class="service-title">Travel Insurance</h3>
-          <p class="service-desc">Comprehensive travel insurance covering medical emergencies, trip cancellations,
-            baggage, and liability for business travelers.</p>
-          <ul class="service-features">
-            <li>Up to $10M medical coverage</li>
-            <li>Trip cancellation protection</li>
-            <li>24/7 emergency assistance</li>
-          </ul>
-          <a href="services/insurance.html" class="service-link">Explore Insurance →</a>
         </div>
 
-        <div class="service-card fade-up" data-delay="400" id="service-expense">
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="8" width="48" height="48" rx="4" stroke="currentColor" stroke-width="2.5" />
-              <path d="M20 32H44M20 22H44M20 42H32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-              <circle cx="44" cy="44" r="8" fill="var(--bg-primary)" stroke="currentColor" stroke-width="2" />
-              <path d="M41 44L43 46L47 42" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
+        <!-- Expense Management -->
+        <div class="service-flip-card fade-up" data-delay="400" id="service-expense" onclick="void(0)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="service-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8" y="8" width="48" height="48" rx="4" stroke="currentColor" stroke-width="2.5" />
+                  <path d="M20 32H44M20 22H44M20 42H32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                  <circle cx="44" cy="44" r="8" fill="var(--bg-primary)" stroke="currentColor" stroke-width="2" />
+                  <path d="M41 44L43 46L47 42" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="service-title">Expense Management</h3>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="service-title">Expense Management</h3>
+              <p class="service-desc">Automated expense reporting, policy compliance, and real-time travel spend dashboards
+                for finance teams.</p>
+              <ul class="service-features">
+                <li>ERP & SAP integration</li>
+                <li>Automated invoice generation</li>
+                <li>Monthly analytics reports</li>
+              </ul>
+              <a href="#contact" class="service-link">Learn more →</a>
+            </div>
           </div>
-          <h3 class="service-title">Expense Management</h3>
-          <p class="service-desc">Automated expense reporting, policy compliance, and real-time travel spend dashboards
-            for finance teams.</p>
-          <ul class="service-features">
-            <li>ERP & SAP integration</li>
-            <li>Automated invoice generation</li>
-            <li>Monthly analytics reports</li>
-          </ul>
-          <a href="#contact" class="service-link">Learn more →</a>
         </div>
 
-        <div class="service-card service-card--cta fade-up" data-delay="500" id="service-concierge">
-          <div class="service-icon service-icon--gold">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="32" cy="20" r="10" stroke="currentColor" stroke-width="2.5" />
-              <path d="M8 56C8 44 18 36 32 36C46 36 56 44 56 56" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" />
-              <path d="M44 14L48 10M20 14L16 10M32 10V6" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" />
-            </svg>
+        <!-- 24/7 Concierge -->
+        <div class="service-flip-card service-card--cta fade-up" data-delay="500" id="service-concierge" onclick="void(0)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="service-icon service-icon--gold">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="32" cy="20" r="10" stroke="currentColor" stroke-width="2.5" />
+                  <path d="M8 56C8 44 18 36 32 36C46 36 56 44 56 56" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" />
+                  <path d="M44 14L48 10M20 14L16 10M32 10V6" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="service-title">24/7 Concierge</h3>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="service-title">24/7 Concierge</h3>
+              <p class="service-desc">Dedicated relationship managers and round-the-clock support to handle every travel
+                emergency, change, or upgrade request.</p>
+              <ul class="service-features">
+                <li>Dedicated account manager</li>
+                <li>24/7 emergency hotline</li>
+                <li>Proactive flight alerts</li>
+              </ul>
+              <a href="#contact" class="service-link service-link--gold">Learn more →</a>
+            </div>
           </div>
-          <h3 class="service-title">24/7 Concierge</h3>
-          <p class="service-desc">Dedicated relationship managers and round-the-clock support to handle every travel
-            emergency, change, or upgrade request.</p>
-          <ul class="service-features">
-            <li>Dedicated account manager</li>
-            <li>24/7 emergency hotline</li>
-            <li>Proactive flight alerts</li>
-          </ul>
-          <a href="#contact" class="service-link service-link--gold">Learn more →</a>
         </div>
 
       </div>
@@ -970,8 +1025,7 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <a href="#home" class="logo">
-          <span class="logo-icon">✦</span>
-          <span class="logo-text">Cosset</span>
+          <img src="assets/logo.jpg" alt="Cosset Logo" class="logo-img" />
         </a>
         <p class="footer-tagline">Premium corporate travel management for enterprise clients worldwide.</p>
         <div class="footer-socials">

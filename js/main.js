@@ -219,9 +219,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =====================================================
-     8. CARD TILT EFFECT on service cards
+     8. 3D FLIP CARD INTERACTION (Mobile & Desktop)
   ===================================================== */
-  document.querySelectorAll('.service-card, .testimonial-card').forEach(card => {
+  const flipCards = document.querySelectorAll('.service-flip-card');
+
+  flipCards.forEach(card => {
+    // Mobile tap to flip
+    card.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        card.classList.toggle('flipped');
+      }
+    });
+
+    // Reset flips when clicking outside if needed (optional, keeping simple for now)
+  });
+
+  // Tilt effect ONLY for testimonial cards
+  document.querySelectorAll('.testimonial-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10;

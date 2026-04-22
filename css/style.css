@@ -252,7 +252,7 @@ ul {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 10px 0;
   transition: all 0.4s var(--ease);
 }
 
@@ -261,7 +261,7 @@ ul {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  padding: 14px 0;
+  padding: 8px 0;
 }
 
 .nav-container {
@@ -278,6 +278,18 @@ ul {
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
+}
+
+.logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+  transition: all 0.3s var(--ease);
+  filter: contrast(1.1) brightness(1.1);
+}
+
+.navbar.scrolled .logo-img {
+  height: 24px;
 }
 
 .logo-icon {
@@ -741,101 +753,181 @@ ul {
   gap: 24px;
 }
 
-.service-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 36px;
-  transition: all 0.4s var(--ease);
-  position: relative;
-  overflow: hidden;
-  cursor: default;
+/* --- 3D Flip Card Architecture --- */
+.service-flip-card {
+  background: transparent;
+  width: 100%;
+  height: 420px; /* Consistent height to prevent layout shift */
+  perspective: 1500px;
+  cursor: pointer;
 }
 
-.service-card::before {
-  content: '';
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.service-flip-card:hover .flip-card-inner,
+.service-flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+  transform: translateZ(0); /* Hardware acceleration for smoother flips */
+}
+
+/* Border Glow Effect */
+.flip-card-front::after,
+.flip-card-back::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent, var(--gold-glow), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.5;
   transition: opacity 0.4s;
 }
 
-.service-card:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--border-gold);
-  transform: translateY(-6px);
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4), 0 0 40px rgba(201, 168, 76, 0.06);
-}
-
-.service-card:hover::before {
+.service-flip-card:hover .flip-card-front::after,
+.service-flip-card:hover .flip-card-back::after {
   opacity: 1;
 }
 
-.service-card--cta {
-  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(201, 168, 76, 0.04));
-  border-color: var(--border-gold);
+/* Front Side Styling */
+.flip-card-front {
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+/* Dark Overlay for Readability */
+.flip-card-front::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(8, 12, 24, 0.7), rgba(8, 12, 24, 0.4));
+  z-index: 0;
+}
+
+.flip-card-front .service-icon,
+.flip-card-front .service-title {
+  position: relative;
+  z-index: 1;
+}
+
+#service-flights .flip-card-front { background-image: url('../assets/service-flights.png'); }
+#service-hotels .flip-card-front { background-image: url('../assets/service-hotels.png'); }
+#service-ground .flip-card-front { background-image: url('../assets/service-ground.png'); }
+#service-visa .flip-card-front { background-image: url('../assets/service-visa.png'); }
+#service-insurance .flip-card-front { background-image: url('../assets/service-insurance.png'); }
+#service-expense .flip-card-front { background-image: url('../assets/service-expense.png'); }
+#service-concierge .flip-card-front { background-image: url('../assets/service-concierge.png'); }
+
+.flip-card-front .service-icon {
+  margin-bottom: 24px;
+}
+
+.flip-card-front .service-title {
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Back Side Styling */
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.05));
+  justify-content: flex-start;
+}
+
+.flip-card-back .service-desc {
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.flip-card-back .service-link {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Reusing & Adapting Existing Components */
 .service-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
   color: var(--text-secondary);
-  transition: all 0.3s;
+  transition: all 0.4s var(--ease);
 }
 
 .service-icon svg {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
 }
 
-.service-card:hover .service-icon {
+.service-flip-card:hover .service-icon {
   background: var(--gold-glow);
   border-color: var(--border-gold);
   color: var(--gold);
-}
-
-.service-icon--gold {
-  background: var(--gold-glow) !important;
-  border-color: var(--border-gold) !important;
-  color: var(--gold) !important;
+  transform: scale(1.1) rotate(5deg);
 }
 
 .service-title {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 12px;
 }
 
 .service-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-secondary);
-  line-height: 1.65;
-  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 .service-features {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 24px;
+  gap: 10px;
 }
 
 .service-features li {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
-  padding-left: 18px;
+  padding-left: 22px;
   position: relative;
 }
 
@@ -844,23 +936,21 @@ ul {
   position: absolute;
   left: 0;
   color: var(--gold);
-  font-size: 11px;
+  font-weight: bold;
 }
 
 .service-link {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  color: var(--text-secondary);
-  letter-spacing: 0.02em;
-  transition: color 0.2s;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
 }
 
 .service-link:hover {
+  letter-spacing: 0.15em;
   color: var(--gold-light);
-}
-
-.service-link--gold {
-  color: var(--gold) !important;
 }
 
 /* ============================================================
